@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+int Octal(int dN);
+
+int main() {
+
+    int dN;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &dN);
+    int result= Octal(dN);
+    printf("%d in decimal = %d in octal", dN,result);
+
+    return 0;
+}
+int Octal(int dN) {
+    int oN = 0, i = 1;
+
+    while (dN != 0) {
+        oN += (dN % 8) * i;
+        dN /= 8;
+        i *= 10;
+    }
+
+    return oN;
+}
